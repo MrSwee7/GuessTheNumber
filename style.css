@@ -1,0 +1,72 @@
+body {
+      background-color: #212121;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    min-height: 100vh;      
+    padding: 20px;
+}
+.main {
+    margin: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-content: center;
+    text-align: center;
+    font-size: 30px;
+    
+}
+.guessInfo {
+    
+   
+   padding: 20px;
+    background-color:#7D8597;
+    min-height: 70vmin;
+    max-width: 600px;
+
+}
+
+#heading {
+    font-size: clamp(4rem, 6vw, 70px);
+    align-items: center;
+    text-align: center;
+      margin: 0 auto; 
+    color: #023047;  
+}
+.input {
+   
+    margin: 10px;
+    padding: 10px;
+    width: 170px;
+    border-radius: 10px;
+    border: none;
+    line-break: normal;
+}
+.btn {
+    margin-top: 50px;
+    padding: 15px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    font-size: 27px;
+    color : white;
+    background-color: black;
+    cursor: pointer;
+}
+.previousInfo {
+    margin-top: 55px;
+}
+.hide {
+    display: none;
+}
+.again {
+    color : white;
+    background-color: black;
+    cursor: pointer;
+    padding: 15px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+}
+.lostMsg {
+    color : #FB8500
+}

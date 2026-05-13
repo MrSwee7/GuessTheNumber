@@ -5,12 +5,20 @@ const attempts = document.querySelector(".remaining");
 const result  = document.querySelector(".result");
 const playAgain = document.querySelector(".again");
 const lostMSG = document.querySelector(".lostMsg");
+const plyGame = document.querySelector(".newGame");
 
 //random Number generator 
-let randomNum =()=> { 
+plyGame.addEventListener("click" , ()=> {
+    randomNum();
+    console.log(num);
+    plyGame.classList.add("hide");
+})
+let num ;
+const randomNum = function() { 
+    num = Math.floor(Math.random()* 100)+1;
+};
 
-    return Math.floor(Math.random()* 100)+1;
-}
+
 
 // Number of Guess
 
@@ -29,16 +37,16 @@ btn.addEventListener("click" , ()=> {
     Guesses--;
     previousGuess.push(input.value)
     lostMSG.classList.add("hide");
-    
-    if ( input.value == randomNum && Guesses != 0){
-        
-        result.innerText = `You won The Game \nGuess was :${randomNum}`
+       
+    if ( input.value == num){
+        result.classList.remove("hide")
+        result.innerText = `You won The Game \nGuess was :${num}`
         lastGuess.classList.add("hide");
         attempts.classList.add("hide");
         playAgain.classList.remove("hide");
-    } else if ( Guesses == 0 )  {
+    } else if ( Guesses === 0 )  {
         result.classList.remove("hide")
-        result.innerText = `You lost Game\nNumber was ${randomNum()} \n Remaining Guesses : 0`;
+        result.innerText = `You lost Game\nNumber was ${num} \n Remaining Guesses : 0`;
         lastGuess.classList.add("hide");
         attempts.classList.add("hide");
         playAgain.classList.remove("hide");
@@ -57,6 +65,8 @@ btn.addEventListener("click" , ()=> {
 
 playAgain.addEventListener("click", ()=> {  
         randomNum();
+        console.log(num)
+          
         previousGuess.length = 0
         Guesses = 10;
         lastGuess.classList.remove("hide");
@@ -65,4 +75,6 @@ playAgain.addEventListener("click", ()=> {
         attempts.innerText = `Guesses remaining : ${Guesses}`;
         result.classList.add("hide");
         playAgain.classList.add("hide");
+        input.value = "";
+        lostMSG.classList.add("hide");
 })
